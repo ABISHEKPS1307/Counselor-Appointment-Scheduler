@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Counselor Appointment Scheduler</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h1>Counselor Appointment Scheduler</h1>
+
+<!-- Role selection -->
+<section id="role-select">
+  <h2>Select Role</h2>
+  <button onclick="chooseRole('student')">Student</button>
+  <button onclick="chooseRole('counselor')">Counselor</button>
+</section>
+
+<!-- Student Authentication -->
+<section id="student-auth" class="hidden">
+  <nav>
+    <button id="student-login-tab" class="active" onclick="switchStudentTab('login')">Login</button>
+    <button id="student-signup-tab" onclick="switchStudentTab('signup')">Signup</button>
+  </nav>
+  <form id="student-login-form">
+    <input type="email" id="student-login-email" placeholder="Email" required />
+    <input type="password" id="student-login-password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+  <form id="student-signup-form" class="hidden">
+    <input type="text" id="student-signup-name" placeholder="Name" required />
+    <input type="email" id="student-signup-email" placeholder="Email" required />
+    <input type="password" id="student-signup-password" placeholder="Password" required />
+    <button type="submit">Signup</button>
+  </form>
+  <p id="student-auth-msg"></p>
+  <button onclick="logout()">Logout</button>
+</section>
+
+<!-- Student Dashboard -->
+<section id="student-dash" class="hidden">
+  <h2>Welcome, <span id="student-name"></span></h2>
+  <form id="student-booking-form">
+    <label for="booking-counselor-type">Counselor Type:</label>
+    <select id="booking-counselor-type" required>
+      <option value="">Select Type</option>
+      <option value="Academic">Academic</option>
+      <option value="Mental Health">Mental Health</option>
+    </select>
+    <label for="booking-counselor-name">Counselor:</label>
+    <select id="booking-counselor-name" required>
+      <option value="">Select Counselor</option>
+    </select>
+    <label for="student-date">Date:</label>
+    <input type="date" id="student-date" required />
+    <label for="student-time">Time:</label>
+    <input type="time" id="student-time" required />
+    <button type="submit">Book Appointment</button>
+  </form>
+  <p id="student-booking-msg"></p>
+  <h3>Your Appointments:</h3>
+  <table border="1" cellpadding="5" id="student-appointments-table">
+    <thead>
+      <tr><th>Counselor</th><th>Type</th><th>Date</th><th>Time</th><th>Status</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button onclick="logout()">Logout</button>
+</section>
+
+<!-- Counselor Authentication -->
+<section id="counselor-auth" class="hidden">
+  <nav>
+    <button id="counselor-login-tab" class="active" onclick="switchCounselorTab('login')">Login</button>
+    <button id="counselor-signup-tab" onclick="switchCounselorTab('signup')">Signup</button>
+  </nav>
+  <form id="counselor-login-form">
+    <input type="email" id="counselor-login-email" placeholder="Email" required />
+    <input type="password" id="counselor-login-password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+  <form id="counselor-signup-form" class="hidden">
+    <input type="text" id="counselor-signup-name" placeholder="Name" required />
+    <input type="email" id="counselor-signup-email" placeholder="Email" required />
+    <input type="password" id="counselor-signup-password" placeholder="Password" required />
+    <select id="counselor-signup-type" required>
+      <option value="">Counselor Type</option>
+      <option value="Academic">Academic</option>
+      <option value="Mental Health">Mental Health</option>
+    </select>
+    <textarea id="counselor-bio" placeholder="Bio (optional)"></textarea>
+    <input type="file" id="counselor-photo" accept="image/*" />
+    <button type="submit">Signup</button>
+  </form>
+  <p id="counselor-auth-msg"></p>
+  <button onclick="logout()">Logout</button>
+</section>
+
+<!-- Counselor Dashboard -->
+<section id="counselor-dash" class="hidden">
+  <h2>Welcome, <span id="counselor-name"></span></h2>
+  <h3>Your Profile</h3>
+  <img id="counselor-photo-display" alt="Counselor Photo" width="96" height="96" />
+  <p id="counselor-bio-display"></p>
+  <h3>Your Appointments</h3>
+  <table border="1" cellpadding="5" id="counselor-appointments-table">
+    <thead>
+      <tr><th>Student</th><th>Date</th><th>Time</th><th>Status</th><th>Actions</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button onclick="logout()">Logout</button>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

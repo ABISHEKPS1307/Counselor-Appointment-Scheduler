@@ -1,0 +1,169 @@
+/* Base and Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f9fbfd;
+  color: #2c3e50;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  color: #2980b9;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px 25px;
+  margin-top: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Buttons */
+button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-top: 15px;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(41, 128, 185, 0.3);
+}
+
+button:hover {
+  background-color: #1c5d8a;
+  box-shadow: 0 6px 12px rgba(28, 93, 138, 0.4);
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.8px solid #ccc;
+  margin: 10px 0 18px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+/* Navigation Tabs */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+nav button {
+  background-color: transparent;
+  color: #2980b9;
+  border: 2px solid transparent;
+  border-bottom: 2.5px solid transparent;
+  border-radius: 6px 6px 0 0;
+  margin: 0 10px;
+  padding: 10px 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease;
+  box-shadow: none;
+}
+
+nav button.active,
+nav button:hover {
+  border-color: #2980b9;
+  border-bottom: 2.5px solid #fefefe;
+  color: #1c5d8a;
+  background-color: #f0f6fb;
+  box-shadow: 0 3px 6px rgba(41, 128, 185, 0.2);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+th {
+  background-color: #d6e9f8;
+  font-weight: 700;
+  padding: 12px 10px;
+  border-radius: 6px 6px 0 0;
+  text-align: left;
+  border-bottom: 2px solid #bbb;
+}
+
+td {
+  background-color: #f9fbfd;
+  padding: 14px 10px;
+  border-bottom: 1px solid #e1e8ee;
+}
+
+/* Messages */
+#student-auth-msg,
+#counselor-auth-msg,
+#student-booking-msg {
+  margin-top: 6px;
+  font-weight: 600;
+  color: #e74c3c; /* error red */
+  min-height: 20px;
+}
+
+#student-booking-msg.green {
+  color: #27ae60;
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  section {
+    margin: 15px 10px;
+    padding: 20px 15px;
+    max-width: 100%;
+  }
+  nav button {
+    margin: 0 6px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
